@@ -1,0 +1,41 @@
+
+body {
+  display: block !important;
+}
+.auth-container {
+  margin: 80px auto; 
+}
+
+header.topbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  padding: 12px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar .brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-dark, #333);
+  text-decoration: none;
+}
+
+.topbar .brand img {
+  height: 40px;
+}
+
+.topbar .top-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 20px;
+}

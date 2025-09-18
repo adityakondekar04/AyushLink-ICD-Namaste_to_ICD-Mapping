@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - AyushLink</title>
-    <link rel="stylesheet" href="/static/css/auth.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - AyushLink</title>
+  <link rel="stylesheet" href="/static/css/auth.css">
+  <link rel="stylesheet" href="/static/css/landing.css"> 
+  <link rel="stylesheet" href="/static/css/common.css">
 </head>
 <body>
-    <div class="auth-container">
-        <div class="auth-left">
-            <h1>Welcome Back</h1>
-            <p>Sign in to access your AyushLink dashboard — quick, secure mapping between NAMASTE &amp; ICD-11.</p>
-        </div>
-        <div class="auth-right">
-            <h2>Sign In to Your Account</h2>
-            <form id="signin-form">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="you@clinic.com" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input id="password" type="password" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn-primary">Sign In</button>
-            </form>
-            <p id="form-status"></p>
-            <p class="redirect">Don't have an account? <a href="/static/signup.html">Sign up</a></p>
-        </div>
+  <!-- 🔹 Topbar copied from index.html -->
+  <header class="topbar">
+    <a href="/" class="brand">
+      <img src="/static/assets/logo.png" alt="AyushLink Logo">
+      <span>AYUSHLINK ICD</span>
+    </a>
+    <nav class="top-links">
+      <a id="features-link" class="link-btn" href="/#features">Features</a>
+      <a id="testimonials-link" class="link-btn" href="/#testimonials">Testimonials</a>
+      <a id="news-link" class="link-btn" href="/static/research_trends.html">News & Trends</a>
+      <div class="language-switcher">
+        <select onchange="setLanguage(this.value)" style="padding: 8px; border-radius: 6px; border: 1px solid var(--text-muted); font-weight: 600; background-color: transparent;">
+          <option value="en">English</option>
+          <option value="hi">हिंदी (Hindi)</option>
+          <option value="mr">मराठी (Marathi)</option>
+        </select>
+      </div>
+      <a id="signin-btn" class="cta-btn" href="/static/signin.html" style="background-color: var(--primary-dark);">Sign In</a>
+      <a id="signup-btn" class="cta-btn" href="/static/signup.html">Sign Up</a>
+    </nav>
+  </header>
+  <!-- 🔹 End of Topbar -->
+
+  <div class="auth-container">
+    <div class="auth-left">
+      <h1>Welcome Back</h1>
+      <p>Sign in to access your AyushLink dashboard — quick, secure mapping between NAMASTE &amp; ICD-11.</p>
     </div>
-    <script src="/static/js/signin.js"></script>
+    <div class="auth-right">
+      <h2>Sign In to Your Account</h2>
+      <form id="signin-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@clinic.com" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+      <p id="form-status"></p>
+      <p class="redirect">Don't have an account? <a href="/static/signup.html">Sign up</a></p>
+    </div>
+  </div>
+
+  <script src="/static/js/translations.js"></script>
+  <script src="/static/js/signin.js"></script>
 </body>
 </html>
