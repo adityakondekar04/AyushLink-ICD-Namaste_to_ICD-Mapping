@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyushLink Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="/static/assets/logo.png" alt="AyushLink Logo">
+            <span>AyushLink ICD</span>
+        </div>
+        <nav class="nav">
+            <a href="/static/doc_dashboard.html" class="active"><i>🏠</i> Dashboard</a>
+            <a href="/static/publish.html"><i>✍️</i> Publish</a>
+            <a href="/static/research_trends.html"><i>📈</i> News & Trends</a>
+            <a href="/static/discussions.html"><i>💬</i> Discussions</a>
+            <a href="/static/patient_history.html"><i>📂</i> Patient History</a>
+            <a href="/static/settings.html"><i>⚙️</i> Settings</a>
+            <a href="#" id="logout-button"><i>↩️</i> Logout</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Doctor's Dashboard</h1>
+            <div class="profile">
+                <img src="/static/assets/doctor.jpg" alt="Profile Picture">
+                <span id="profile-name">Loading...</span>
+            </div>
+        </header>
+
+        <div class="app-layout">
+            <div class="search-column">
+                <div class="search-box">
+                    <select id="search-mode"><option value="name">Name</option><option value="namaste">NAMASTE</option><option value="icd">ICD-11</option></select>
+                    <input type="text" id="search-input" placeholder="Search for a diagnosis...">
+                </div>
+                <div id="search-suggestions-container"></div>
+                <div id="diagnosis-details-container" style="display: none;"></div>
+            </div>
+            <div class="ai-column">
+                <div class="ai-analyzer-card">
+                    <h2>🤖 AI Symptom Analyzer</h2>
+                    <textarea id="symptoms-textarea" placeholder="Enter clinical notes, symptoms, and observations..."></textarea>
+                    <button id="analyze-button">Analyze Symptoms</button>
+                    <div id="ai-results"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publish Center - AyushLink</title>
+    <link rel="stylesheet" href="/static/css/community.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <img src="/static/assets/logo.png" alt="AyushLink Logo">
+            <span>AyushLink</span>
+        </div>
+        <a href="/static/doc_dashboard.html" class="cta-btn">← Back to Dashboard</a>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Publish Center</h1>
+            <p>Share reports, case studies, and medical news with the community</p>
+        </div>
+
+        <nav class="tabs">
+            <button class="tab-button" onclick="showPanel('news')">Medical News</button>
+            <button class="tab-button active" onclick="showPanel('contribution')">Case Study / Contribution</button>
+        </nav>
+
+        <div id="news" class="form-panel">
+            <div class="form-card">
+                <h2>Post Medical News</h2>
+                <p class="muted">Share a relevant update for the AYUSHLINK community.</p>
+                <form id="news-form">
+                    <div class="input-group"><label for="headline">Headline</label><input id="headline" type="text" placeholder="e.g., WHO endorses Traditional Medicine integration" required></div>
+                    <div class="input-group"><label for="summary">Summary</label><textarea id="summary" placeholder="Write a concise summary of the news article..." required></textarea></div>
+                    <div class="input-group"><label for="source-url">Source URL (optional)</label><input id="source-url" type="url" placeholder="https://example.com/news-article"></div>
+                    <button type="submit" class="cta-btn" style="width:100%;">Publish News</button>
+                    <p id="news-form-status" style="margin-top: 1rem;"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="contribution" class="form-panel active">
+            <div class="form-card">
+                <h2>Submit a Contribution</h2>
+                <p class="muted">Suggest an improvement or share a detailed case study.</p>
+                <form id="contribution-form">
+                    <div class="input-group"><label for="namaste-code">Target NAMASTE Code</label><input id="namaste-code" type="text" placeholder="e.g., NAM-A-001" required></div>
+                    <div class="input-group"><label for="suggestion-type">Suggestion Type</label><input id="suggestion-type" type="text" value="Case Study" required></div>
+                    <div class="input-group"><label for="content">Content / Abstract</label><textarea id="content" placeholder="Describe your case study or suggestion in detail..." required></textarea></div>
+                    <button type="submit" class="cta-btn" style="width:100%;">Submit Contribution</button>
+                    <p id="contribution-form-status" style="margin-top: 1rem;"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="/static/js/publish.js"></script>
+</body>
+</html>

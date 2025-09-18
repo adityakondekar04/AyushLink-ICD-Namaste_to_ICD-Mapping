@@ -1,0 +1,83 @@
+/* File: static/css/auth.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@700&display=swap');
+
+:root {
+    --bg-main: #f0f3f8;
+    --bg-card: #ffffff;
+    --bg-accent: #d5e3e8;
+    --text-dark: #264c55;
+    --text-light: #3e7887;
+    --primary-color: #3e7887;
+    --shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', sans-serif; background-color: var(--bg-main); color: var(--text-dark); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+
+.auth-container {
+    width: 900px;
+    max-width: 95%;
+    min-height: 600px;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    overflow: hidden;
+}
+
+.auth-left {
+    flex: 1;
+    background-color: var(--bg-accent);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.auth-left h1 { font-family: 'Roboto Slab', serif; font-size: 32px; margin-bottom: 16px; }
+.auth-left p { color: var(--text-light); font-size: 18px; line-height: 1.6; }
+
+.auth-right {
+    flex: 1.2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.auth-right h2 { font-family: 'Roboto Slab', serif; font-size: 28px; margin-bottom: 24px; }
+
+.input-group { margin-bottom: 18px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d9e6ea;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--text-dark);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.redirect { margin-top: 24px; text-align: center; font-size: 14px; }
+.redirect a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+
+#form-status { margin-top: 16px; font-weight: 600; text-align: center; }
+
+/* Styles for multi-step form */
+.form-step { display: none; }
+.form-step.active { display: block; }
+.step-buttons { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }
+.btn-secondary { background-color: #eaf3f6; color: var(--text-dark); flex: 1; }

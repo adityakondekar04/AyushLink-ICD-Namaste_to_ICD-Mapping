@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AyushLink</title>
+    <link rel="stylesheet" href="/static/css/settings.css">
+</head>
+<body>
+    <main class="container">
+        <div class="page-header">
+            <a href="/static/doc_dashboard.html" style="text-decoration: none; color: #3498db; display: block; text-align: center; margin-bottom: 20px;">← Back to Dashboard</a>
+            <h1>Account Settings</h1>
+        </div>
+        <div class="settings-card">
+            <form id="settings-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="full-name">Full Name</label>
+                    <input id="full-name" type="text" placeholder="Your full name" required>
+                </div>
+                <button type="submit" class="btn-primary">Save Changes</button>
+                <p id="form-status"></p>
+            </form>
+        </div>
+    </main>
+    <script src="/static/js/settings.js"></script>
+</body>
+</html>

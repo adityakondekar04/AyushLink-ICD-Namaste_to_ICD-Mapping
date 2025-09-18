@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History - AyushLink</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/patient_history.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/" class="logo">
+            <img src="/static/assets/logo.png" alt="AyushLink Logo">
+            <span>AyushLink</span>
+        </a>
+        <nav class="nav">
+            <a href="/static/doc_dashboard.html"><i>🏠</i> Dashboard</a>
+            <a href="/static/publish.html"><i>✍️</i> Publish</a>
+            <a href="/static/research_trends.html"><i>📈</i> News & Trends</a>
+            <a href="/static/discussions.html"><i>💬</i> Discussions</a>
+            <a href="/static/patient_history.html" class="active"><i>📂</i> Patient History</a>
+            <a href="/static/settings.html"><i>⚙️</i> Settings</a>
+            <a href="#" id="logout-button"><i>↩️</i> Logout</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1>Patient Records</h1>
+            <div class="profile">
+                <img src="/static/assets/doctor.jpg" alt="Profile Picture">
+                <span id="profile-name">Loading...</span>
+            </div>
+        </header>
+
+        <div class="patient-container">
+            <div class="patient-layout">
+                <div class="patient-card">
+                    <div class="patient-list-header">
+                        <h2>My Patients</h2>
+                        <button id="add-patient-btn">＋ Add New</button>
+                    </div>
+                    <div id="patient-list"><p>Loading patients...</p></div>
+                </div>
+
+                <div id="patient-detail-container" class="patient-card">
+                    <div id="patient-detail-placeholder">
+                        <h3>Select a patient to view their records</h3>
+                        <p>Or add a new patient to get started.</p>
+                    </div>
+                    <div id="patient-detail-content" style="display: none;">
+                        <h2 id="detail-patient-name"></h2>
+                        <div class="patient-records">
+                            <h3>Medical History</h3>
+                            <div id="record-list"></div>
+                        </div>
+                        <div class="form-card">
+                            <h3>Add New Record</h3>
+                            <form id="add-record-form">
+                                <textarea id="record-symptoms" placeholder="Symptoms" required></textarea>
+                                <textarea id="record-diagnosis" placeholder="Diagnosis" required></textarea>
+                                <textarea id="record-treatment" placeholder="Treatment / Formulation" required></textarea>
+                                <button type="submit">Save Record</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="add-patient-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Patient</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <form id="add-patient-form-modal">
+                <div class="input-group"><label for="patient-name-modal">Full Name</label><input id="patient-name-modal" type="text" required></div>
+                <div class="input-group"><label for="patient-dob-modal">Date of Birth</label><input id="patient-dob-modal" type="date"></div>
+                <div class="input-group"><label for="patient-contact-modal">Contact Info</label><input id="patient-contact-modal" type="text"></div>
+                <button type="submit" class="cta-btn" style="width:100%;">Save Patient</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/static/js/patient_history.js"></script>
+</body>
+</html>

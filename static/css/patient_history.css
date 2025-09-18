@@ -1,0 +1,90 @@
+/* File: static/css/patient_history.css - Redesigned */
+
+.patient-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.patient-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.patient-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+}
+.patient-card h2 {
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e4e7ea;
+}
+
+.patient-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add-patient-btn {
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.patient-list-item {
+    padding: 15px;
+    border-bottom: 1px solid #e4e7ea;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+.patient-list-item:hover, .patient-list-item.active {
+    background-color: #eef7ff;
+    color: var(--primary-color);
+}
+
+#patient-detail-placeholder {
+    text-align: center;
+    padding: 80px 20px;
+    color: #95a5a6;
+}
+#patient-detail-placeholder h3 { font-size: 20px; }
+
+.record-card { border-left: 4px solid var(--primary-color); }
+/* ... (other existing styles are fine) ... */
+
+/* Modal Styles for "Add Patient" */
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.modal-header h2 { margin: 0; }
+.close-btn { font-size: 24px; cursor: pointer; border: none; background: none; }

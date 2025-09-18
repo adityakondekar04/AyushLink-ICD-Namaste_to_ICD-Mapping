@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Tools - AyushLink</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="/static/assets/logo.png" alt="logo" style="width:40px;height:40px;border-radius:50%;object-fit:cover;"><br>
+      AYUSHLINK
+    </div>
+    <div class="nav">
+      <a href="/static/doc_dashboard.html"><i>🏠</i> Dashboard</a>
+      <a href="/static/api_tools.html" class="active"><i>🛠</i> API Tools</a>
+      <a href="/static/publish.html"><i>✍️</i> Publish</a>
+      <a href="/static/research_trends.html"><i>📈📊</i>Research and Trends</a>
+      <a href="/static/signin.html"><i>↩️</i> Logout</a>
+    </div>
+    <div class="footer">2025 © All Rights Reserved.</div>
+  </div>
+
+  <div class="main">
+    <div class="profile">
+      <img src="https://via.placeholder.com/40" alt="profile"> Dr. Lucky
+    </div>
+
+    <a href="/static/doc_dashboard.html" style="position:absolute;left:24px;top:24px;text-decoration:none;color:#2e616d;font-weight:600">← Back</a>
+
+    <div id="headerCard" class="card" style="width:100%;max-width:980px;margin-top:64px;align-items:flex-start;gap:12px">
+      <div class="meta">
+        <div id="diseaseTitle" class="title">Loading...</div>
+        <div><strong>NAMASTE ID</strong>: <span id="namasteId">-</span> &nbsp;&nbsp; <strong>ICD_11 ID</strong>: <span id="icdId">-</span></div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap:24px; max-width:980px; width:100%; margin-top:18px">
+      <div class="card" style="align-items:flex-start">
+        <div class="meta" style="width:100%">
+          <div class="title" style="background:#3e7887;color:#fff;display:inline-block;padding:6px 12px;border-radius:16px;font-size:16px">Description</div>
+          <div id="descriptionText" style="margin-top:12px;line-height:1.6"><i>Loading...</i></div>
+        </div>
+      </div>
+      <div class="card" style="align-items:flex-start">
+        <div class="meta" style="width:100%">
+          <div class="title" style="background:#3e7887;color:#fff;display:inline-block;padding:6px 12px;border-radius:16px;font-size:16px">Formulations</div>
+          <div id="formulationsText" style="margin-top:12px;line-height:1.6"><i>Loading...</i></div>
+        </div>
+      </div>
+       <div class="card" style="align-items:flex-start; background-color: #e6f4e6;">
+        <div class="meta" style="width:100%">
+          <div class="title" style="background:#4CAF50;color:#fff;display:inline-block;padding:6px 12px;border-radius:16px;font-size:16px">Pathya (Dietary Do's)</div>
+          <div id="pathyaText" style="margin-top:12px;line-height:1.6"><i>Loading...</i></div>
+        </div>
+      </div>
+       <div class="card" style="align-items:flex-start; background-color: #f4e6e6;">
+        <div class="meta" style="width:100%">
+          <div class="title" style="background:#f44336;color:#fff;display:inline-block;padding:6px 12px;border-radius:16px;font-size:16px">Apathya (Dietary Don'ts)</div>
+          <div id="apathyaText" style="margin-top:12px;line-height:1.6"><i>Loading...</i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    // This script will run automatically when the page loads.
+    (async function loadDetails() {
+        // Get references to all the HTML elements we need to fill
+        const diseaseTitleEl = document.getElementById('diseaseTitle');
+        const namasteIdEl = document.getElementById('namasteId');
+        const icdIdEl = document.getElementById('icdId');
+        const descriptionTextEl = document.getElementById('descriptionText');
+        const formulationsTextEl = document.getElementById('formulationsText');
+        const pathyaTextEl = document.getElementById('pathyaText');
+        const apathyaTextEl = document.getElementById('apathyaText');
+
+        // Get the NAMASTE code from the URL (e.g., from ?code=NAM-A-001)
+        const params = new URLSearchParams(window.location.search);
+        const namasteCode = params.get('code');
+
+        if (!namasteCode) {
+            diseaseTitleEl.textContent = 'No Diagnosis Selected';
+            descriptionTextEl.textContent = 'Please go back to the dashboard and select a diagnosis.';
+            return;
+        }
+
+        try {
+            // Make the API call to the backend using the code from the URL
+            const response = await fetch(`/api/v1/diagnosis/${namasteCode}`);
+            if (!response.ok) {
+                throw new Error('Diagnosis not found or server error.');
+            }
+            const data = await response.json();
+
+            // Helper function to format text or show a default message
+            const formatText = (text) => text ? text.replace(/\n/g, '<br>') : 'No information available.';
+
+            // Populate the page with the real data from the API
+            diseaseTitleEl.textContent = data.term || 'N/A';
+            namasteIdEl.textContent = data.namastecode || '-';
+            icdIdEl.textContent = data.icd11code || '-';
+            descriptionTextEl.innerHTML = formatText(data.description);
+            formulationsTextEl.innerHTML = formatText(data.formulations);
+            pathyaTextEl.innerHTML = formatText(data.pathya);
+            apathyaTextEl.innerHTML = formatText(data.apathya);
+
+        } catch (error) {
+            console.error('Failed to load details:', error);
+            diseaseTitleEl.textContent = 'Error Loading Details';
+            descriptionTextEl.innerHTML = `<p style="color:red;">Could not fetch details. ${error.message}</p>`;
+        }
+    })();
+</script>
+</body>
+</html>

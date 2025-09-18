@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyushLink - Uniting Ayurveda and Modern Medicine</title>
+    <link rel="stylesheet" href="/static/css/landing.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">
+            <img src="/static/assets/logo.png" alt="AyushLink Logo">
+            <span>AYUSHLINK ICD</span>
+        </a>
+        <nav class="top-links">
+            <a id="features-link" class="link-btn" href="#features">Features</a>
+            <a id="testimonials-link" class="link-btn" href="#testimonials">Testimonials</a>
+            <a id="news-link" class="link-btn" href="/static/research_trends.html">News & Trends</a>
+            <div class="language-switcher">
+                <select onchange="setLanguage(this.value)" style="padding: 8px; border-radius: 6px; border: 1px solid var(--text-muted); font-weight: 600; background-color: transparent;">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+            </div>
+            <a id="signin-btn" class="cta-btn" href="/static/signin.html">Sign In</a>
+            <a id="signup-btn" class="cta-btn" href="/static/signup.html" style="background-color: var(--primary-dark);">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1 id="hero-title">Map NAMASTE and ICD-11 seamlessly</h1>
+                <p id="hero-desc">Fast and reliable ICD-11–NAMASTE integration, uniting Ayurveda and modern medicine through an AI-powered, multilingual, collaborative, and research-driven platform for seamless clinical care.</p>
+                <div class="hero-buttons">
+                    <a id="open-dashboard-btn" class="cta-btn" href="/static/doc_dashboard.html">Open Dashboard</a>
+                    <a id="explore-features-btn" class="cta-btn" href="#features" style="background-color: var(--primary-dark);">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <img src="/static/assets/file_00000000fcb4622fa105c18070a0aa6c.png" alt="Illustration of medical integration">
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="features-title">Features</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card"><div id="feature-title-1" class="title">Fast & Reliable Integration</div><div id="feature-desc-1" class="muted">Unified search across ICD-11 and NAMASTE codes.</div></div>
+                    <div class="feature-card"><div id="feature-title-2" class="title">AI-Powered Search</div><div id="feature-desc-2" class="muted">Smart suggestions based on symptoms and conditions.</div></div>
+                    <div class="feature-card"><div id="feature-title-3" class="title">Multilingual Support 🌐</div><div id="feature-desc-3" class="muted">Codes and descriptions in multiple languages.</div></div>
+                    <div class="feature-card"><div id="feature-title-4" class="title">Doctor Collaboration 👨‍⚕️</div><div id="feature-desc-4" class="muted">Secure platform for case discussions and second opinions.</div></div>
+                    <div class="feature-card"><div id="feature-title-5" class="title">Patient History Integration 📑</div><div id="feature-desc-5" class="muted">Structured records linked with standard codes.</div></div>
+                    <div class="feature-card"><div id="feature-title-6" class="title">Research Dashboard 📊</div><div id="feature-desc-6" class="muted">Visual insights into disease patterns and trends.</div></div>
+                    <div class="feature-card"><div id="feature-title-7" class="title">Treatment Mapping 🩺</div><div id="feature-desc-7" class="muted">Suggests therapies and formulations linked to codes.</div></div>
+                    <div class="feature-card"><div id="feature-title-8" class="title">Secure & Compliant 🔒</div><div id="feature-desc-8" class="muted">EHR/FHIR compliant integrations and data privacy.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section" style="background-color: #d5e3e8;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="testimonials-title">Testimonials</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div id="testimonial-1" class="testimonial-card">“Clean UI and fast search. Exactly what our clinic needed.” — Dr. R</div>
+                    <div id="testimonial-2" class="testimonial-card">“Clear crosswalk between NAMASTE and ICD-11.” — Dr. S</div>
+                    <div id="testimonial-3" class="testimonial-card">“Saves minutes on every patient.” — Dr. K</div>
+                </div>
+                <div class="final-cta">
+                    <a id="get-started-btn" href="/static/signup.html" class="cta-btn" style="padding: 16px 32px; font-size: 18px;">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AYUSHLINK ICD. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/translations.js"></script>
+</body>
+</html>

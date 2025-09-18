@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AyushLink</title>
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <h1>Join AyushLink</h1>
+            <p>Create your account to map NAMASTE and ICD‑11 with confidence.</p>
+        </div>
+        <div class="auth-right">
+            <h2>Create Your Account</h2>
+            <form id="signup-form">
+                <div class="form-step active">
+                    <div class="input-group"><label for="fullName">Full Name</label><input id="fullName" type="text" placeholder="Dr. Jane Doe" required></div>
+                    <div class="input-group"><label for="email">Email</label><input id="email" type="email" placeholder="you@clinic.com" required></div>
+                    <div class="input-group"><label for="password">Password</label><input id="password" type="password" placeholder="••••••••" required></div>
+                    <div class="step-buttons" style="justify-content:flex-end;"><button type="button" class="btn-primary next-step">Next</button></div>
+                </div>
+                <div class="form-step">
+                    <div class="input-group"><label for="regId">Doctor Registration Number</label><input id="regId" type="text" placeholder="e.g., MCI/XX/0000"></div>
+                    <div class="input-group"><label for="spec">Specialization</label><input id="spec" type="text" placeholder="Ayurveda, Cardiology, etc."></div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                    <div class="step-buttons"><button type="button" class="btn-primary btn-secondary prev-step">Previous</button></div>
+                </div>
+            </form>
+            <p id="form-status"></p>
+            <p class="redirect">Already have an account? <a href="/static/signin.html">Sign in</a></p>
+        </div>
+    </div>
+    <script src="/static/js/signup.js"></script>
+</body>
+</html>
